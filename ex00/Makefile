@@ -22,3 +22,6 @@ fclean:
 	@$(RM) $(NAME) $(OBJ)
 
 re: fclean all
+
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)

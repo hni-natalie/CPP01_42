@@ -4,7 +4,7 @@ RM = rm -f
 
 NAME = sed
 
-SRC = main.cpp 
+SRC = main.cpp Replace.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -22,3 +22,6 @@ fclean:
 	@$(RM) $(NAME) $(OBJ)
 
 re: fclean all
+
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
