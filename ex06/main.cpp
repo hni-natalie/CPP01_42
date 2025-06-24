@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 17:57:01 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/20 16:43:20 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/24 16:47:16 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int argc, char** argv)
 {
 	Harl harl;
 
-	harl.complain("DEBUG");
-	// harl.complain("WARNING");
-	// harl.complain("ERROR");
-	// harl.complain("HI");
-	// harl.complain("INFO");
-	// harl.complain("INVALID");
+	if (argc != 2)
+		return 0;
+		
+	std::string level = argv[1];
+	harl.complain(level);
 
 	return 0;
 }
